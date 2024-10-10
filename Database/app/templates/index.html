@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Utilisateurs</title>
+</head>
+<body>
+    <h1>Liste des Utilisateurs</h1>
+    <ul>
+        {% for utilisateur in utilisateurs %}
+            <li>{{ utilisateur[1] }} {{ utilisateur[2] }} - {{ utilisateur[3] }} - {{ utilisateur[4] }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Ajouter un Utilisateur</h2>
+    <form action="/add" method="post">
+        <input type="text" name="nom" placeholder="Nom" required>
+        <input type="text" name="prenom" placeholder="Prénom" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="text" name="immatriculation" placeholder="Immatriculation" required>
+        <button type="submit">Ajouter</button>
+    </form>
+</body>
+</html>
