@@ -4,12 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page de Connexion</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="/static/styles.css">
 </head>
 <body>
     <div class="login-container">
         <h2>Connexion</h2>
-        <form action="{{ url_for('login') }}" method="POST">
+        
+        <!-- Show success or error messages -->
+        {% if message %}
+            <p class="success">{{ message }}</p>
+        {% elif error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+        
+        <form action="/login" method="POST">
             <div class="form-group">
                 <label for="username">Nom d'utilisateur</label>
                 <input type="text" id="username" name="username" required>
