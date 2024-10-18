@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Carte des Places de Parking Disponibles</h2>
+<div id="map" class="map-container"></div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        initUserMap();
+    });
+</script>
+{% endblock %}

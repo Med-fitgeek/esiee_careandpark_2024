@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Données en Temps Réel sur les Parkings</h2>
+<table id="parking-table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nom</th>
+            <th>Type</th>
+            <th>Occupé</th>
+            <th>Dernière Mise à Jour</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Les données seront insérées ici via JavaScript -->
+    </tbody>
+</table>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        initAgentView();
+    });
+</script>
+{% endblock %}
